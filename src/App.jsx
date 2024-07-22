@@ -45,7 +45,6 @@ function App() {
             />
             <CoreConcept {...CORE_CONCEPTS[2]} />
             <CoreConcept {...CORE_CONCEPTS[3]} />
-            />
           </ul>
         </section>
       </main>
