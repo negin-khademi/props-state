@@ -12,6 +12,18 @@ function App() {
     console.log(selectedButton);
   }
 
+  let tabContent = <p>Please select a button</p>;
+  if (selectedTopic) {
+    tabContent = (
+      <div id="tab-content">
+        <h3>{EXAMPLES[selectedTopic].title}</h3>
+        <p>{EXAMPLES[selectedTopic].description}</p>
+        <pre>
+          <code>{EXAMPLES[selectedTopic].code}</code>
+        </pre>
+      </div>
+    );
+  }
   return (
     <div>
       <Header />
@@ -37,16 +49,7 @@ function App() {
             <TabButton onSelect={() => handleClick('props')}>Props</TabButton>
             <TabButton onSelect={() => handleClick('state')}>State</TabButton>
           </menu>
-          {!selectedTopic && <p>Please select a button</p>}
-          {selectedTopic && (
-            <div id="tab-content">
-              <h3>{EXAMPLES[selectedTopic].title}</h3>
-              <p>{EXAMPLES[selectedTopic].description}</p>
-              <pre>
-                <code>{EXAMPLES[selectedTopic].code}</code>
-              </pre>
-            </div>
-          )}
+          {tabContent}
         </section>
       </main>
     </div>
