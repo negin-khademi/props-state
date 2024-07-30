@@ -1,4 +1,4 @@
-export default function Tabs({ Children, buttons, ButtonsContainer }) {
+export default function Tabs({ Children, buttons, ButtonsContainer = 'menu' }) {
   // const ButtonsContainer = buttonsContainer;
   return (
     <>
